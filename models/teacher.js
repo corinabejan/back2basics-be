@@ -8,9 +8,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      teacher.hasMany(models.regular_lesson);
-      teacher.hasMany(models.live_lesson);
-      teacher.hasMany(models.custom_lesson);
+      teacher.hasMany(models.regularLesson);
+      teacher.hasMany(models.liveLesson);
+      teacher.hasMany(models.customLesson);
+      teacher.belongsTo(models.regularLesson);
+      teacher.belongsTo(models.customLesson)
+      teacher.belongsTo(models.liveLesson)
     }
   }
   teacher.init(

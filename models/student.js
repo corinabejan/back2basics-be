@@ -10,9 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      student.hasMany(models.regular_lesson)
-      student.hasMany(models.custom_lesson)
-      student.hasMany(models.live_lesson)
+      student.hasMany(models.regularLesson)
+      student.hasMany(models.customLesson)
+      student.hasMany(models.liveLesson)
+      student.belongsTo(models.regularLesson)
+      student.belongsTo(models.customLesson)
+      student.belongsTo(models.liveLesson)
     }
   };
   student.init({
@@ -20,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     imageUrl: DataTypes.STRING,
-    credenetials: DataTypes.STRING,
+    credentials: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'student',
