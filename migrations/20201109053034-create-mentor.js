@@ -24,6 +24,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      credentials: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       agenda: {
         type: Sequelize.STRING
       },

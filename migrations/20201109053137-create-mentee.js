@@ -24,6 +24,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      credentials: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       interest: {
         type: Sequelize.STRING,
         allowNull: false
